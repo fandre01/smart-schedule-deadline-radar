@@ -258,7 +258,7 @@ def render_deadlines(user_id: int) -> None:
             if st.button("Delete", key=f"del_deadline_{row['id']}"):
                 delete_deadline(row["id"], user_id)
                 st.warning("Deadline deleted.")
-                st.experimental_rerun()
+                st.rerun()
 
 
 def render_plan(user_id: int) -> None:
@@ -347,3 +347,7 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+# ...existing code...
+    # st.experimental_rerun()
+    st.rerun()
+# ...existing code...
