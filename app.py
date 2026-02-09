@@ -310,7 +310,7 @@ def render_settings(user_id: int) -> None:
             if st.button("Delete", key=f"del_av_{row['id']}"):
                 delete_availability(row["id"], user_id)
                 st.warning("Availability deleted.")
-                st.experimental_rerun()
+                st.rerun()
 
 
 def main() -> None:
@@ -331,7 +331,7 @@ def main() -> None:
 
     if st.sidebar.button("Logout"):
         st.session_state.user = None
-        st.experimental_rerun()
+        st.rerun()
 
     if page == "Dashboard":
         render_dashboard(user["id"])
@@ -347,7 +347,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-# ...existing code...
-    # st.experimental_rerun()
-    st.rerun()
-# ...existing code...
